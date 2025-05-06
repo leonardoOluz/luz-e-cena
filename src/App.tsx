@@ -1,5 +1,13 @@
+import Banner from "./components/Banner";
+import Header from "./components/Header";
+
 function App() {
-  return (<h1>Olá Mundo</h1>)
+  return (
+    <>
+      <Header />
+      <Banner src="./Imagens/Banner Desktop.svg" alt="Banner" />
+    </>
+  );
 }
 
-export default App
+export default App;
