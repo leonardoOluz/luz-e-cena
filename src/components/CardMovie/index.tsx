@@ -1,20 +1,8 @@
+import { Movie } from "../../types";
 import Tag from "../Tag";
 import styles from "./CardMovie.module.css";
-
-type Categoria = "3D" | "2D";
-type Censura = "Livre" | "10 anos" | "12 anos" | "14 anos" | "16 anos";
-
-interface CardMovieProps {
-  src: string;
-  alt: string;
-  titulo: string;
-  categoria: Categoria;
-  censura: Censura;
-  genero: string;
-  duracao: number;
-}
-const CardMovie = (props: CardMovieProps) => {
-  const {src, alt, titulo, genero, duracao, categoria, censura} = props
+const CardMovie = (props: Movie) => {
+  const { src, alt, titulo, genero, duracao, categoria, censura } = props;
   return (
     <li className={styles.card}>
       <img src={src} alt={alt} />
@@ -23,16 +11,16 @@ const CardMovie = (props: CardMovieProps) => {
         <div className={styles.informacoes}>
           <div className={styles.linha1}>
             <p>{genero}</p>
-            <Tag value={categoria}/>
+            <Tag value={categoria} />
           </div>
           <div className={styles.linha2}>
             <p>{duracao}</p>
-            <Tag value={censura}/>
+            <Tag value={censura} />
           </div>
         </div>
       </div>
     </li>
-  )
-}
+  );
+};
 
-export default CardMovie
+export default CardMovie;
